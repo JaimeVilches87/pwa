@@ -51,10 +51,10 @@ self.addEventListener('activate', function(e) {
 }); 
 
 self.addEventListener('fetch', function(e) {
-    console.log('fetch request : ' + e.request.url)
+    // console.log('fetch request : ' + e.request.url)
     e.respondWith(
         caches.match(e.request).then(function (request) {
-            if (request) { //cache is available? then respond with the cache
+            if (request) { 
                 console.log('responding with the cache : ' + e.request.url)
                 return request
             } else { // no cache? fetch request
